@@ -9,7 +9,7 @@
 ```
 {
     "require": {
-        "verystar/pay": "~1.0"
+        "verystar/pay": "~1.1"
     }
 }
 ```

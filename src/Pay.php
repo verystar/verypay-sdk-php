@@ -237,6 +237,23 @@ class Pay
 
     /****
      *
+     * 验证callback合法性
+     *
+     * @param $params
+     *
+     * @return bool
+     */
+    public function checkNotifySign($params)
+    {
+        $temp_sign = $params['sign'];
+        unset($params['sign']);
+        $sign = $this->getSign($params, $this->app_secret);//本地签名
+
+        return $temp_sign == $sign ? true : false;
+    }
+
+    /****
+     *
      *
      * 统一下单接口
      *
